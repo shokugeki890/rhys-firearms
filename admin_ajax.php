@@ -2,7 +2,7 @@
 require_once 'database.php';
 require_once 'auth.php';
 requireAdmin(); // Only admins can access this
-
+//this is admin_ajax.php
 header('Content-Type: application/json');
 
 $action = $_GET['action'] ?? '';

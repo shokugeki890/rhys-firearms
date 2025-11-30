@@ -1,7 +1,7 @@
 <?php
 // auth.php - Authentication functions
 session_start();
-
+//this is auth.php
 function isLoggedIn() {
     return isset($_SESSION['user_id']);
 }

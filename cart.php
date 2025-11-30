@@ -1,7 +1,7 @@
 <?php
 require_once 'database.php';
 require_once 'auth.php';
-
+//this is cart.php
 $message = '';
 $error = '';
 

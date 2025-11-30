@@ -1,6 +1,7 @@
 <?php
 require_once 'database.php';
 require_once 'auth.php';
+//this is services.php
 ?>
 
 <!DOCTYPE html>

@@ -1,7 +1,7 @@
 <?php
 require_once 'database.php';
 require_once 'auth.php';
-
+//this is register.php
 // Redirect if already logged in
 if (isLoggedIn()) {
     header('Location: index.php');

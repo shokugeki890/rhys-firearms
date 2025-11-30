@@ -1,7 +1,7 @@
 <?php
 require_once 'database.php';
 require_once 'auth.php';
-
+//this is checkout.php
 $message = '';
 $error = '';
 
@@ -57,6 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
         $error = 'Your cart is empty.';
     } else {
 
+<<<<<<< HEAD
         // Start transaction for atomicity
         $pdo->beginTransaction();
 
@@ -92,16 +93,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
             // Commit transaction
             $pdo->commit();
 
+=======
+        // For demo purposes, we'll just mark items as purchased
+        $stmt = $pdo->prepare("UPDATE transaction SET status = 'purchased' WHERE user_id = ? AND status = 'cart'");
+        if ($stmt->execute([$user_id])) {
+>>>>>>> de6e7a0a362d839be0dc496211d21b1c6f5be87f
             $message = 'Order completed successfully! You will receive a confirmation email shortly.';
 
             // Clear cart items from display
             $cart_items = [];
             $total = 0;
             $item_count = 0;
+<<<<<<< HEAD
 
         } catch (Exception $e) {
             // Rollback on error
             $pdo->rollBack();
+=======
+        } else {
+>>>>>>> de6e7a0a362d839be0dc496211d21b1c6f5be87f
             $error = 'Failed to process order. Please try again.';
         }
     }
